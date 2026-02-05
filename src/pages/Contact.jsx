@@ -30,27 +30,33 @@ const Contact = () => {
                         <h2 className="text-3xl font-serif font-bold text-white mb-6">
                             Send us a Message
                         </h2>
-                        <form className="space-y-6">
+                        <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+                            <input type="hidden" name="form-name" value="contact" />
                             <div>
                                 <label className="block text-gray-300 mb-2 font-medium">Name</label>
                                 <input
                                     type="text"
+                                    name="name"
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-400 transition-colors"
                                     placeholder="Your name"
+                                    required
                                 />
                             </div>
                             <div>
                                 <label className="block text-gray-300 mb-2 font-medium">Email</label>
                                 <input
                                     type="email"
+                                    name="email"
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-400 transition-colors"
                                     placeholder="your.email@example.com"
+                                    required
                                 />
                             </div>
                             <div>
                                 <label className="block text-gray-300 mb-2 font-medium">Phone</label>
                                 <input
                                     type="tel"
+                                    name="phone"
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-400 transition-colors"
                                     placeholder="+1 (234) 567-8900"
                                 />
@@ -59,14 +65,16 @@ const Contact = () => {
                                 <label className="block text-gray-300 mb-2 font-medium">Message</label>
                                 <textarea
                                     rows="5"
+                                    name="message"
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-400 transition-colors resize-none"
                                     placeholder="Your message..."
+                                    required
                                 ></textarea>
                             </div>
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                type="button"
+                                type="submit"
                                 className="w-full bg-gold-500 hover:bg-gold-600 text-black font-semibold py-4 rounded-lg transition-colors"
                             >
                                 Send Message
